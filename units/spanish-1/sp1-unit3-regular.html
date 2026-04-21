@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regular Verbs — Spanish con Sr. McMakin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../spanish-class-styles.css">
+<style>
+  .unit-hero{background:var(--navy);padding:4rem 1.5rem 3rem;position:relative;overflow:hidden}
+  .unit-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(245,166,35,.05) 0,rgba(245,166,35,.05) 1px,transparent 1px,transparent 40px),repeating-linear-gradient(-45deg,rgba(214,43,43,.05) 0,rgba(214,43,43,.05) 1px,transparent 1px,transparent 40px)}
+  .unit-hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto}
+  .back-link{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;transition:color .2s}
+  .back-link:hover{color:var(--gold)}
+  .unit-course-tag{display:inline-block;padding:.3rem 1rem;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+  .unit-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,3.8rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:.4rem}
+  .unit-hero-sub{font-size:1.05rem;color:rgba(255,255,255,.6)}
+  .unit-body{max-width:900px;margin:0 auto;padding:3rem 1.5rem;display:flex;flex-direction:column;gap:2rem}
+  .tier-block{border-radius:18px;overflow:hidden;border:2px solid}
+  .tier-c{border-color:#2a9d3a}.tier-b{border-color:#1a6fb5}.tier-a{border-color:#9b3db8}
+  .tier-block-header{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem}
+  .tier-c .tier-block-header{background:#edfaef}.tier-b .tier-block-header{background:#e8f3fd}.tier-a .tier-block-header{background:#f5eafd}
+  .tier-grade{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:50%;font-weight:900;font-size:1.1rem;flex-shrink:0}
+  .tier-c .tier-grade{background:#2a9d3a;color:white}.tier-b .tier-grade{background:#1a6fb5;color:white}.tier-a .tier-grade{background:#9b3db8;color:white}
+  .tier-label{font-weight:700;font-size:1rem;color:var(--navy)}.tier-sublabel{font-size:.78rem;color:#777;font-style:italic}
+  .tier-block-body{background:var(--cream);padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem}
+  .tier-sub-section{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .tier-sub-title{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1rem}
+  .tier-c .tier-sub-title{background:#2a9d3a;color:white}.tier-b .tier-sub-title{background:#1a6fb5;color:white}.tier-a .tier-sub-title{background:#9b3db8;color:white}
+  .tier-list{list-style:none;margin:0;padding:0}
+  .tier-list li{display:flex;gap:.75rem;align-items:flex-start;padding:.7rem 1.1rem;border-top:1px solid rgba(0,0,0,.05);font-size:.94rem;line-height:1.5}
+  .tier-list li:first-child{border-top:none}
+  .tier-list li::before{content:'→';font-weight:700;flex-shrink:0;margin-top:.1rem}
+  .tier-c .tier-list li::before{color:#2a9d3a}.tier-b .tier-list li::before{color:#1a6fb5}.tier-a .tier-list li::before{color:#9b3db8}
+  .vocab-table{width:100%;border-collapse:collapse}
+  .vocab-table thead th{text-align:left;padding:.55rem 1rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.45);background:rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.07)}
+  .vocab-table tbody tr{border-bottom:1px solid rgba(0,0,0,.05)}.vocab-table tbody tr:last-child{border-bottom:none}
+  .vocab-table tbody tr:nth-child(even){background:rgba(0,0,0,.015)}
+  .vocab-table tbody td{padding:.6rem 1rem;font-size:.92rem}
+  .vocab-table tbody td:first-child{font-weight:700;color:var(--navy)}.vocab-table tbody td:nth-child(2){color:#555}.vocab-table tbody td:nth-child(3){color:#999;font-style:italic;font-size:.83rem}
+  .grammar-list{display:flex;flex-direction:column}
+  .grammar-card{padding:1rem 1.1rem;border-top:1px solid rgba(0,0,0,.05)}.grammar-card:first-child{border-top:none}
+  .grammar-card-title{font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:.3rem}
+  .grammar-card-body{font-size:.87rem;color:#555;line-height:1.7}
+  .practice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;padding:1rem}
+  .practice-card{background:var(--cream);border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:1rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .2s,box-shadow .2s}
+  .practice-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  .practice-card-topic{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+  .tier-c .practice-card-topic{color:#2a9d3a}.tier-b .practice-card-topic{color:#1a6fb5}.tier-a .practice-card-topic{color:#9b3db8}
+  .practice-links{display:flex;flex-wrap:wrap;gap:.35rem}
+  .practice-link{display:inline-flex;padding:.22rem .65rem;border-radius:999px;font-size:.73rem;font-weight:700;text-decoration:none;background:white;color:var(--navy);border:1.5px solid rgba(0,0,0,.12);transition:all .2s}
+  .tier-c .practice-link:hover{background:#2a9d3a;color:white;border-color:#2a9d3a}
+  .tier-b .practice-link:hover{background:#1a6fb5;color:white;border-color:#1a6fb5}
+  .tier-a .practice-link:hover{background:#9b3db8;color:white;border-color:#9b3db8}
+  .unit-nav-row{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0 0;border-top:2px solid rgba(0,0,0,.07);flex-wrap:wrap;gap:.75rem}
+  .unit-nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:999px;border:2px solid var(--navy);background:transparent;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;color:var(--navy);text-decoration:none;transition:all .2s}
+  .unit-nav-btn:hover{background:var(--navy);color:var(--white)}
+  .unit-nav-btn.disabled{opacity:.3;pointer-events:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../../index.html" class="nav-brand">Spanish con Sr. McMakin</a>
+  <div class="nav-links">
+    <a href="#must">I Must</a><a href="#should">I Should</a><a href="#might">I Might</a>
+  </div>
+</nav>
+<div class="unit-hero">
+  <div class="unit-hero-inner">
+    <a href="sp1-unit3.html" class="back-link">← Unit 3: Verbs</a>
+    <div><span class="unit-course-tag" style="background:#0A8F7B22;color:#0A8F7B;border:1.5px solid #0A8F7B">Spanish 1 · Unit 3</span></div>
+    <h1 class="unit-hero-title">Regular Verbs</h1>
+    <p class="unit-hero-sub">Conjugating -ar, -er, and -ir verbs</p>
+  </div>
+</div>
+<div class="unit-body">
+  <div id="must">
+  <div class="tier-block tier-c">
+    <div class="tier-block-header">
+      <span class="tier-grade">C</span>
+      <div><div class="tier-label">I must know...</div><div class="tier-sublabel">Required for a C</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Conjugate a regular -ar, -er, or -ir verb in the <em>he/she</em> form</li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>habla</td><td>he/she speaks</td><td>AH-blah</td></tr><tr><td>come</td><td>he/she eats</td><td>KOH-meh</td></tr><tr><td>vive</td><td>he/she lives</td><td>BEE-beh</td></tr><tr><td>escribe</td><td>he/she writes</td><td>ehs-KREE-beh</td></tr><tr><td>corre</td><td>he/she runs</td><td>KOH-reh</td></tr><tr><td>bebe</td><td>he/she drinks</td><td>BEH-beh</td></tr><tr><td>aprende</td><td>he/she learns</td><td>ah-PREHN-deh</td></tr><tr><td>abre</td><td>he/she opens</td><td>AH-breh</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">He/She Pattern</div><div class="grammar-card-body">-ar verbs: drop -ar, add <em>-a</em>. -er verbs: drop -er, add <em>-e</em>. -ir verbs: drop -ir, add <em>-e</em>. Example: <em>hablar→habla, comer→come, vivir→vive</em>.</div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Regular — Must</div><div class="practice-links"><a href="https://quizlet.com/" target="_blank" class="practice-link">Quizlet</a><a href="https://play.blooket.com/" target="_blank" class="practice-link">Blooket</a><a href="https://conjuguemos.com/" target="_blank" class="practice-link">Conjuguemos</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div id="should">
+  <div class="tier-block tier-b">
+    <div class="tier-block-header">
+      <span class="tier-grade">B</span>
+      <div><div class="tier-label">I should know...</div><div class="tier-sublabel">Required for a B</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Conjugate regular verbs for <em>I</em> and <em>you</em></li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>hablo</td><td>I speak</td><td>AH-bloh</td></tr><tr><td>como</td><td>I eat</td><td>KOH-moh</td></tr><tr><td>vivo</td><td>I live</td><td>BEE-boh</td></tr><tr><td>hablas</td><td>you speak</td><td>AH-blahs</td></tr><tr><td>comes</td><td>you eat</td><td>KOH-mehs</td></tr><tr><td>vives</td><td>you live</td><td>BEE-behs</td></tr><tr><td>estudias</td><td>you study</td><td>ehs-TOO-dyahs</td></tr><tr><td>escuchas</td><td>you listen</td><td>ehs-KOO-chahs</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Yo Form</div><div class="grammar-card-body">All three types use <em>-o</em> in the yo form: <em>hablo, como, vivo</em>. This is consistent — no exceptions for regular verbs.</div></div><div class="grammar-card"><div class="grammar-card-title">Tú Form</div><div class="grammar-card-body">-ar: <em>-as</em>. -er: <em>-es</em>. -ir: <em>-es</em>. Example: <em>hablas, comes, vives</em>.</div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Regular — Should</div><div class="practice-links"><a href="https://quizlet.com/" target="_blank" class="practice-link">Quizlet</a><a href="https://play.blooket.com/" target="_blank" class="practice-link">Blooket</a><a href="https://conjuguemos.com/" target="_blank" class="practice-link">Conjuguemos</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div id="might">
+  <div class="tier-block tier-a">
+    <div class="tier-block-header">
+      <span class="tier-grade">A</span>
+      <div><div class="tier-label">I might know...</div><div class="tier-sublabel">Required for an A</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Conjugate regular verbs for groups: nosotros and ellos</li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>hablamos</td><td>we speak</td><td>ah-BLAH-mohs</td></tr><tr><td>comemos</td><td>we eat</td><td>koh-MEH-mohs</td></tr><tr><td>vivimos</td><td>we live</td><td>bee-BEE-mohs</td></tr><tr><td>hablan</td><td>they speak</td><td>AH-blahn</td></tr><tr><td>comen</td><td>they eat</td><td>KOH-mehn</td></tr><tr><td>viven</td><td>they live</td><td>BEE-behn</td></tr><tr><td>escribimos</td><td>we write</td><td>ehs-kree-BEE-mohs</td></tr><tr><td>corren</td><td>they run</td><td>KOH-rehn</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Nosotros Form</div><div class="grammar-card-body">-ar: <em>-amos</em>. -er: <em>-emos</em>. -ir: <em>-imos</em>. Example: <em>hablamos, comemos, vivimos</em>.</div></div><div class="grammar-card"><div class="grammar-card-title">Ellos Form</div><div class="grammar-card-body">-ar: <em>-an</em>. -er/-ir: <em>-en</em>. Example: <em>hablan, comen, viven</em>.</div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Regular — Might</div><div class="practice-links"><a href="https://quizlet.com/" target="_blank" class="practice-link">Quizlet</a><a href="https://play.blooket.com/" target="_blank" class="practice-link">Blooket</a><a href="https://conjuguemos.com/" target="_blank" class="practice-link">Conjuguemos</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div class="unit-nav-row">
+    <a href="sp1-u3-foundational.html" class="unit-nav-btn ">← Previous Topic</a>
+    <a href="#" class="unit-nav-btn disabled">Next Topic →</a>
+  </div>
+</div>
+<footer><p>© 2025–2026 · <strong>Sr. McMakin</strong> · Tenino High School · <a href="mailto:McMakinT@Tenino.k12.wa.us" style="color:var(--gold);">McMakinT@Tenino.k12.wa.us</a></p></footer>
+</body></html>

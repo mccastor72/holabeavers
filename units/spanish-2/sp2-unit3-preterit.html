@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preterit Tense — Spanish con Sr. McMakin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../spanish-class-styles.css">
+<style>
+  .unit-hero{background:var(--navy);padding:4rem 1.5rem 3rem;position:relative;overflow:hidden}
+  .unit-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(245,166,35,.05) 0,rgba(245,166,35,.05) 1px,transparent 1px,transparent 40px),repeating-linear-gradient(-45deg,rgba(214,43,43,.05) 0,rgba(214,43,43,.05) 1px,transparent 1px,transparent 40px)}
+  .unit-hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto}
+  .back-link{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;transition:color .2s}
+  .back-link:hover{color:var(--gold)}
+  .unit-course-tag{display:inline-block;padding:.3rem 1rem;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+  .unit-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,3.8rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:.4rem}
+  .unit-hero-sub{font-size:1.05rem;color:rgba(255,255,255,.6)}
+  .unit-body{max-width:900px;margin:0 auto;padding:3rem 1.5rem;display:flex;flex-direction:column;gap:2rem}
+  .tier-block{border-radius:18px;overflow:hidden;border:2px solid}
+  .tier-c{border-color:#2a9d3a}.tier-b{border-color:#1a6fb5}.tier-a{border-color:#9b3db8}
+  .tier-block-header{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem}
+  .tier-c .tier-block-header{background:#edfaef}.tier-b .tier-block-header{background:#e8f3fd}.tier-a .tier-block-header{background:#f5eafd}
+  .tier-grade{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:50%;font-weight:900;font-size:1.1rem;flex-shrink:0}
+  .tier-c .tier-grade{background:#2a9d3a;color:white}.tier-b .tier-grade{background:#1a6fb5;color:white}.tier-a .tier-grade{background:#9b3db8;color:white}
+  .tier-label{font-weight:700;font-size:1rem;color:var(--navy)}.tier-sublabel{font-size:.78rem;color:#777;font-style:italic}
+  .tier-block-body{background:var(--cream);padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem}
+  .tier-sub-section{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .tier-sub-title{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1rem}
+  .tier-c .tier-sub-title{background:#2a9d3a;color:white}.tier-b .tier-sub-title{background:#1a6fb5;color:white}.tier-a .tier-sub-title{background:#9b3db8;color:white}
+  .tier-list{list-style:none;margin:0;padding:0}
+  .tier-list li{display:flex;gap:.75rem;align-items:flex-start;padding:.7rem 1.1rem;border-top:1px solid rgba(0,0,0,.05);font-size:.94rem;line-height:1.5}
+  .tier-list li:first-child{border-top:none}
+  .tier-list li::before{content:'→';font-weight:700;flex-shrink:0;margin-top:.1rem}
+  .tier-c .tier-list li::before{color:#2a9d3a}.tier-b .tier-list li::before{color:#1a6fb5}.tier-a .tier-list li::before{color:#9b3db8}
+  .vocab-table{width:100%;border-collapse:collapse}
+  .vocab-table thead th{text-align:left;padding:.55rem 1rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.45);background:rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.07)}
+  .vocab-table tbody tr{border-bottom:1px solid rgba(0,0,0,.05)}.vocab-table tbody tr:last-child{border-bottom:none}
+  .vocab-table tbody tr:nth-child(even){background:rgba(0,0,0,.015)}
+  .vocab-table tbody td{padding:.6rem 1rem;font-size:.92rem}
+  .vocab-table tbody td:first-child{font-weight:700;color:var(--navy)}.vocab-table tbody td:nth-child(2){color:#555}.vocab-table tbody td:nth-child(3){color:#999;font-style:italic;font-size:.83rem}
+  .grammar-list{display:flex;flex-direction:column}
+  .grammar-card{padding:1rem 1.1rem;border-top:1px solid rgba(0,0,0,.05)}.grammar-card:first-child{border-top:none}
+  .grammar-card-title{font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:.3rem}
+  .grammar-card-body{font-size:.87rem;color:#555;line-height:1.7}
+  .practice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;padding:1rem}
+  .practice-card{background:var(--cream);border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:1rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .2s,box-shadow .2s}
+  .practice-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  .practice-card-topic{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+  .tier-c .practice-card-topic{color:#2a9d3a}.tier-b .practice-card-topic{color:#1a6fb5}.tier-a .practice-card-topic{color:#9b3db8}
+  .practice-links{display:flex;flex-wrap:wrap;gap:.35rem}
+  .practice-link{display:inline-flex;padding:.22rem .65rem;border-radius:999px;font-size:.73rem;font-weight:700;text-decoration:none;background:white;color:var(--navy);border:1.5px solid rgba(0,0,0,.12);transition:all .2s}
+  .tier-c .practice-link:hover{background:#2a9d3a;color:white;border-color:#2a9d3a}
+  .tier-b .practice-link:hover{background:#1a6fb5;color:white;border-color:#1a6fb5}
+  .tier-a .practice-link:hover{background:#9b3db8;color:white;border-color:#9b3db8}
+  .unit-nav-row{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0 0;border-top:2px solid rgba(0,0,0,.07);flex-wrap:wrap;gap:.75rem}
+  .unit-nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:999px;border:2px solid var(--navy);background:transparent;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;color:var(--navy);text-decoration:none;transition:all .2s}
+  .unit-nav-btn:hover{background:var(--navy);color:var(--white)}
+  .unit-nav-btn.disabled{opacity:.3;pointer-events:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../../index.html" class="nav-brand">Spanish con Sr. McMakin</a>
+  <div class="nav-links">
+    <a href="#must">I Must</a><a href="#should">I Should</a><a href="#might">I Might</a>
+  </div>
+</nav>
+<div class="unit-hero">
+  <div class="unit-hero-inner">
+    <a href="sp2-unit3.html" class="back-link">← Unit 3: Going on Vacation</a>
+    <div><span class="unit-course-tag" style="background:#E8439322;color:#E84393;border:1.5px solid #E84393">Spanish 2 · Unit 3</span></div>
+    <h1 class="unit-hero-title">Preterit Tense</h1>
+    <p class="unit-hero-sub">Talking about completed past events</p>
+  </div>
+</div>
+<div class="unit-body">
+  <div id="must">
+  <div class="tier-block tier-c">
+    <div class="tier-block-header">
+      <span class="tier-grade">C</span>
+      <div><div class="tier-label">I must know...</div><div class="tier-sublabel">Required for a C</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Conjugate regular verbs in the preterit <em>he/she</em> form</li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>visitó</td><td>he/she visited</td><td>bee-see-TOH</td></tr><tr><td>nadó</td><td>he/she swam</td><td>nah-DOH</td></tr><tr><td>corrió</td><td>he/she ran</td><td>koh-RYOH</td></tr><tr><td>comió</td><td>he/she ate</td><td>koh-MYOH</td></tr><tr><td>escribió</td><td>he/she wrote</td><td>ehs-kree-BYOH</td></tr><tr><td>bebió</td><td>he/she drank</td><td>beh-BYOH</td></tr><tr><td>vivió</td><td>he/she lived</td><td>bee-BYOH</td></tr><tr><td>abrió</td><td>he/she opened</td><td>ah-BRYOH</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Preterit He/She</div><div class="grammar-card-body">-ar: drop -ar, add <em>-ó</em>. -er/-ir: drop -er/-ir, add <em>-ió</em>. Note the accent mark — required!</div></div><div class="grammar-card"><div class="grammar-card-title">Completed Action</div><div class="grammar-card-body">Use preterit for actions with a clear beginning and end: <em>Ayer ella nadó en la playa.</em></div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Preterit — Must</div><div class="practice-links"><a href="https://conjuguemos.com/verb/2699917" target="_blank" class="practice-link">Conjuguemos</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div id="should">
+  <div class="tier-block tier-b">
+    <div class="tier-block-header">
+      <span class="tier-grade">B</span>
+      <div><div class="tier-label">I should know...</div><div class="tier-sublabel">Required for a B</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Conjugate preterit verbs in <em>I</em> and <em>you</em> forms</li><li>Use key irregular preterit forms</li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>visité</td><td>I visited</td><td>bee-see-TEH</td></tr><tr><td>nadé</td><td>I swam</td><td>nah-DEH</td></tr><tr><td>corrí</td><td>I ran</td><td>koh-RREE</td></tr><tr><td>comí</td><td>I ate</td><td>koh-MEE</td></tr><tr><td>bailaste</td><td>you danced</td><td>by-LAHS-teh</td></tr><tr><td>comiste</td><td>you ate</td><td>koh-MEES-teh</td></tr><tr><td>fui</td><td>I went (ir/ser)</td><td>fwee</td></tr><tr><td>tuve</td><td>I had (tener)</td><td>TOO-beh</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Preterit Yo/Tú</div><div class="grammar-card-body">Yo: -ar→ <em>-é</em>, -er/-ir→ <em>-í</em>. Tú: -ar→ <em>-aste</em>, -er/-ir→ <em>-iste</em>.</div></div><div class="grammar-card"><div class="grammar-card-title">Key Irregulars</div><div class="grammar-card-body"><em>ir/ser: fui/fuiste/fue</em> (same for both!). <em>tener→tuve/tuviste/tuvo. hacer→hice/hiciste/hizo. estar→estuve.</em></div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Preterit — Should</div><div class="practice-links"><a href="https://conjuguemos.com/verb/2699917" target="_blank" class="practice-link">Conjuguemos</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div id="might">
+  <div class="tier-block tier-a">
+    <div class="tier-block-header">
+      <span class="tier-grade">A</span>
+      <div><div class="tier-label">I might know...</div><div class="tier-sublabel">Required for an A</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Conjugate preterit for groups</li><li>Combine preterit and imperfect in a narrative</li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>visitamos</td><td>we visited</td><td>bee-see-TAH-mohs</td></tr><tr><td>nadaron</td><td>they swam</td><td>nah-DAH-rohn</td></tr><tr><td>comimos</td><td>we ate</td><td>koh-MEE-mohs</td></tr><tr><td>corrieron</td><td>they ran</td><td>koh-RYEH-rohn</td></tr><tr><td>mientras</td><td>while</td><td>MYEHN-trahs</td></tr><tr><td>de repente</td><td>suddenly</td><td>deh reh-PEHN-teh</td></tr><tr><td>ayer</td><td>yesterday</td><td>ah-YEHR</td></tr><tr><td>la semana pasada</td><td>last week</td><td>lah seh-MAH-nah pah-SAH-dah</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Group Preterit</div><div class="grammar-card-body">-ar: <em>-amos/-aron</em>. -er/-ir: <em>-imos/-ieron</em>. Note: nosotros -ar is same as present!</div></div><div class="grammar-card"><div class="grammar-card-title">Preterit + Imperfect</div><div class="grammar-card-body">Preterit = what happened. Imperfect = background/setting. <em>Mientras nadaba, vi un delfín.</em> (While I was swimming, I saw a dolphin.)</div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Preterit — Might</div><div class="practice-links"><a href="https://conjuguemos.com/verb/2699917" target="_blank" class="practice-link">Conjuguemos</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div class="unit-nav-row">
+    <a href="sp2-u3-places.html" class="unit-nav-btn ">← Previous Topic</a>
+    <a href="#" class="unit-nav-btn disabled">Next Topic →</a>
+  </div>
+</div>
+<footer><p>© 2025–2026 · <strong>Sr. McMakin</strong> · Tenino High School · <a href="mailto:McMakinT@Tenino.k12.wa.us" style="color:var(--gold);">McMakinT@Tenino.k12.wa.us</a></p></footer>
+</body></html>
