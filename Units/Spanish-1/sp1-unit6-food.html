@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Items — Spanish con Sr. McMakin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../spanish-class-styles.css">
+<style>
+  .unit-hero{background:var(--navy);padding:4rem 1.5rem 3rem;position:relative;overflow:hidden}
+  .unit-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(245,166,35,.05) 0,rgba(245,166,35,.05) 1px,transparent 1px,transparent 40px),repeating-linear-gradient(-45deg,rgba(214,43,43,.05) 0,rgba(214,43,43,.05) 1px,transparent 1px,transparent 40px)}
+  .unit-hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto}
+  .back-link{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;transition:color .2s}
+  .back-link:hover{color:var(--gold)}
+  .unit-course-tag{display:inline-block;padding:.3rem 1rem;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+  .unit-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,3.8rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:.4rem}
+  .unit-hero-sub{font-size:1.05rem;color:rgba(255,255,255,.6)}
+  .unit-body{max-width:900px;margin:0 auto;padding:3rem 1.5rem;display:flex;flex-direction:column;gap:2rem}
+  .tier-block{border-radius:18px;overflow:hidden;border:2px solid}
+  .tier-c{border-color:#2a9d3a}.tier-b{border-color:#1a6fb5}.tier-a{border-color:#9b3db8}
+  .tier-block-header{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem}
+  .tier-c .tier-block-header{background:#edfaef}.tier-b .tier-block-header{background:#e8f3fd}.tier-a .tier-block-header{background:#f5eafd}
+  .tier-grade{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:50%;font-weight:900;font-size:1.1rem;flex-shrink:0}
+  .tier-c .tier-grade{background:#2a9d3a;color:white}.tier-b .tier-grade{background:#1a6fb5;color:white}.tier-a .tier-grade{background:#9b3db8;color:white}
+  .tier-label{font-weight:700;font-size:1rem;color:var(--navy)}.tier-sublabel{font-size:.78rem;color:#777;font-style:italic}
+  .tier-block-body{background:var(--cream);padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem}
+  .tier-sub-section{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .tier-sub-title{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1rem}
+  .tier-c .tier-sub-title{background:#2a9d3a;color:white}.tier-b .tier-sub-title{background:#1a6fb5;color:white}.tier-a .tier-sub-title{background:#9b3db8;color:white}
+  .tier-list{list-style:none;margin:0;padding:0}
+  .tier-list li{display:flex;gap:.75rem;align-items:flex-start;padding:.7rem 1.1rem;border-top:1px solid rgba(0,0,0,.05);font-size:.94rem;line-height:1.5}
+  .tier-list li:first-child{border-top:none}
+  .tier-list li::before{content:'→';font-weight:700;flex-shrink:0;margin-top:.1rem}
+  .tier-c .tier-list li::before{color:#2a9d3a}.tier-b .tier-list li::before{color:#1a6fb5}.tier-a .tier-list li::before{color:#9b3db8}
+  .vocab-table{width:100%;border-collapse:collapse}
+  .vocab-table thead th{text-align:left;padding:.55rem 1rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.45);background:rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.07)}
+  .vocab-table tbody tr{border-bottom:1px solid rgba(0,0,0,.05)}.vocab-table tbody tr:last-child{border-bottom:none}
+  .vocab-table tbody tr:nth-child(even){background:rgba(0,0,0,.015)}
+  .vocab-table tbody td{padding:.6rem 1rem;font-size:.92rem}
+  .vocab-table tbody td:first-child{font-weight:700;color:var(--navy)}.vocab-table tbody td:nth-child(2){color:#555}.vocab-table tbody td:nth-child(3){color:#999;font-style:italic;font-size:.83rem}
+  .grammar-list{display:flex;flex-direction:column}
+  .grammar-card{padding:1rem 1.1rem;border-top:1px solid rgba(0,0,0,.05)}.grammar-card:first-child{border-top:none}
+  .grammar-card-title{font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:.3rem}
+  .grammar-card-body{font-size:.87rem;color:#555;line-height:1.7}
+  .practice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;padding:1rem}
+  .practice-card{background:var(--cream);border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:1rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .2s,box-shadow .2s}
+  .practice-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  .practice-card-topic{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+  .tier-c .practice-card-topic{color:#2a9d3a}.tier-b .practice-card-topic{color:#1a6fb5}.tier-a .practice-card-topic{color:#9b3db8}
+  .practice-links{display:flex;flex-wrap:wrap;gap:.35rem}
+  .practice-link{display:inline-flex;padding:.22rem .65rem;border-radius:999px;font-size:.73rem;font-weight:700;text-decoration:none;background:white;color:var(--navy);border:1.5px solid rgba(0,0,0,.12);transition:all .2s}
+  .tier-c .practice-link:hover{background:#2a9d3a;color:white;border-color:#2a9d3a}
+  .tier-b .practice-link:hover{background:#1a6fb5;color:white;border-color:#1a6fb5}
+  .tier-a .practice-link:hover{background:#9b3db8;color:white;border-color:#9b3db8}
+  .unit-nav-row{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0 0;border-top:2px solid rgba(0,0,0,.07);flex-wrap:wrap;gap:.75rem}
+  .unit-nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:999px;border:2px solid var(--navy);background:transparent;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;color:var(--navy);text-decoration:none;transition:all .2s}
+  .unit-nav-btn:hover{background:var(--navy);color:var(--white)}
+  .unit-nav-btn.disabled{opacity:.3;pointer-events:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../../index.html" class="nav-brand">Spanish con Sr. McMakin</a>
+  <div class="nav-links">
+    <a href="#must">I Must</a><a href="#should">I Should</a><a href="#might">I Might</a>
+  </div>
+</nav>
+<div class="unit-hero">
+  <div class="unit-hero-inner">
+    <a href="sp1-unit6.html" class="back-link">← Unit 6: Food</a>
+    <div><span class="unit-course-tag" style="background:#D62B2B22;color:#D62B2B;border:1.5px solid #D62B2B">Spanish 1 · Unit 6</span></div>
+    <h1 class="unit-hero-title">Food Items</h1>
+    <p class="unit-hero-sub">Naming and describing food</p>
+  </div>
+</div>
+<div class="unit-body">
+  <div id="must">
+  <div class="tier-block tier-c">
+    <div class="tier-block-header">
+      <span class="tier-grade">C</span>
+      <div><div class="tier-label">I must know...</div><div class="tier-sublabel">Required for a C</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Name a limited number of food items</li><li>Use <em>me gusta / no me gusta</em></li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>la manzana</td><td>apple</td><td>lah mahn-SAH-nah</td></tr><tr><td>el plátano</td><td>banana</td><td>ehl PLAH-tah-noh</td></tr><tr><td>la leche</td><td>milk</td><td>lah LEH-cheh</td></tr><tr><td>el arroz</td><td>rice</td><td>ehl ah-ROHS</td></tr><tr><td>el pollo</td><td>chicken</td><td>ehl POH-yoh</td></tr><tr><td>me gusta</td><td>I like (sing.)</td><td>meh GOOS-tah</td></tr><tr><td>no me gusta</td><td>I don't like</td><td>noh meh GOOS-tah</td></tr><tr><td>la fruta</td><td>fruit</td><td>lah FROO-tah</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Gustar Basics</div><div class="grammar-card-body"><em>Me gusta</em> + singular. <em>Me gustan</em> + plural. Example: <em>Me gusta el pollo. Me gustan las manzanas.</em></div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Food — Must</div><div class="practice-links"><a href="https://quizlet.com/" target="_blank" class="practice-link">Quizlet</a><a href="https://play.blooket.com/" target="_blank" class="practice-link">Blooket</a><a href="https://conjuguemos.com/" target="_blank" class="practice-link">Conjuguemos</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div id="should">
+  <div class="tier-block tier-b">
+    <div class="tier-block-header">
+      <span class="tier-grade">B</span>
+      <div><div class="tier-label">I should know...</div><div class="tier-sublabel">Required for a B</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Name an extended number of food items</li><li>Describe food using adjectives</li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>la naranja</td><td>orange</td><td>lah nah-RAHN-hah</td></tr><tr><td>las uvas</td><td>grapes</td><td>lahs OO-bahs</td></tr><tr><td>el jugo</td><td>juice</td><td>ehl HOO-goh</td></tr><tr><td>los frijoles</td><td>beans</td><td>lohs free-HOH-lehs</td></tr><tr><td>la carne</td><td>meat</td><td>lah KAR-neh</td></tr><tr><td>el pescado</td><td>fish</td><td>ehl pehs-KAH-doh</td></tr><tr><td>dulce</td><td>sweet</td><td>DOOL-seh</td></tr><tr><td>salado/a</td><td>salty</td><td>sah-LAH-doh</td></tr><tr><td>picante</td><td>spicy</td><td>pee-KAHN-teh</td></tr><tr><td>agrio/a</td><td>sour</td><td>AH-gryoh</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Food Adjectives</div><div class="grammar-card-body">Adjectives follow the noun: <em>un plátano dulce, una sopa picante</em>. Adjectives ending in -e don't change for gender: <em>picante, dulce</em>.</div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Food — Should</div><div class="practice-links"><a href="https://quizlet.com/" target="_blank" class="practice-link">Quizlet</a><a href="https://play.blooket.com/" target="_blank" class="practice-link">Blooket</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div id="might">
+  <div class="tier-block tier-a">
+    <div class="tier-block-header">
+      <span class="tier-grade">A</span>
+      <div><div class="tier-label">I might know...</div><div class="tier-sublabel">Required for an A</div></div>
+    </div>
+    <div class="tier-block-body">
+      <div class="tier-sub-section"><div class="tier-sub-title">🎯 Goals</div><ul class="tier-list"><li>Discuss food in restaurant and meal contexts</li></ul></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📖 Vocabulary</div><table class="vocab-table"><thead><tr><th>Español</th><th>English</th><th>Pronunciation</th></tr></thead><tbody><tr><td>el pescado</td><td>fish</td><td>ehl pehs-KAH-doh</td></tr><tr><td>los huevos</td><td>eggs</td><td>lohs WEH-bohs</td></tr><tr><td>el queso</td><td>cheese</td><td>ehl KEH-soh</td></tr><tr><td>las verduras</td><td>vegetables</td><td>lahs behr-DOO-rahs</td></tr><tr><td>Quisiera...</td><td>I would like...</td><td>kee-SYEH-rah</td></tr><tr><td>¿Cuál es tu comida favorita?</td><td>What is your favorite food?</td><td>kwahl ehs too koh-MEE-dah</td></tr><tr><td>el desayuno</td><td>breakfast</td><td>ehl deh-sah-YOO-noh</td></tr><tr><td>la cena</td><td>dinner</td><td>lah SEH-nah</td></tr></tbody></table></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">📝 Grammar</div><div class="grammar-list"><div class="grammar-card"><div class="grammar-card-title">Restaurant Phrases</div><div class="grammar-card-body"><em>Quisiera el pollo con arroz, por favor.</em> — I would like chicken with rice, please. <em>Quisiera</em> is more polite than <em>quiero</em>.</div></div></div></div>
+      <div class="tier-sub-section"><div class="tier-sub-title">🎮 Practice</div><div class="practice-grid"><div class="practice-card"><div class="practice-card-topic">Food — Might</div><div class="practice-links"><a href="https://quizlet.com/" target="_blank" class="practice-link">Quizlet</a><a href="https://play.blooket.com/" target="_blank" class="practice-link">Blooket</a></div></div></div></div>
+    </div>
+  </div>
+  </div>
+  <div class="unit-nav-row">
+    <a href="#" class="unit-nav-btn disabled">← Previous Topic</a>
+    <a href="#" class="unit-nav-btn disabled">Next Topic →</a>
+  </div>
+</div>
+<footer><p>© 2025–2026 · <strong>Sr. McMakin</strong> · Tenino High School · <a href="mailto:McMakinT@Tenino.k12.wa.us" style="color:var(--gold);">McMakinT@Tenino.k12.wa.us</a></p></footer>
+</body></html>

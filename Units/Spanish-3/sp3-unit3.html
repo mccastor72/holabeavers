@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish 3 · Unit 03 — Clase de Español</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../spanish-class-styles.css">
+<style>
+  .unit-hero {
+    background: var(--navy);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .unit-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(245,166,35,0.05) 0px, rgba(245,166,35,0.05) 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(-45deg, rgba(214,43,43,0.05) 0px, rgba(214,43,43,0.05) 1px, transparent 1px, transparent 40px);
+  }
+  .unit-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 2rem; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--gold); }
+  .unit-course-tag {
+    display: inline-block; padding: 0.3rem 1rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    background: #0A8F7B22; color: #0A8F7B; border: 1.5px solid #0A8F7B; margin-bottom: 1rem;
+  }
+  .unit-hero-num { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.4rem; }
+  .unit-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; color: var(--white); line-height: 1.05; margin-bottom: 0.4rem; }
+  .unit-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
+  .unit-weeks-badge { display: inline-block; padding: 0.3rem 0.9rem; background: rgba(255,255,255,0.08); border-radius: 999px; font-size: 0.8rem; color: rgba(255,255,255,0.5); font-weight: 600; }
+  .unit-body { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .unit-section { margin-bottom: 3.5rem; }
+  .unit-section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 3px solid #0A8F7B; }
+  .objectives-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .objectives-list li { display: flex; gap: 0.8rem; align-items: flex-start; background: var(--white); border-radius: 10px; padding: 0.9rem 1.1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 0.97rem; line-height: 1.5; }
+  .objectives-list li::before { content: '✓'; font-weight: 900; font-size: 0.85rem; color: #0A8F7B; margin-top: 0.1rem; flex-shrink: 0; }
+  .vocab-table { width: 100%; border-collapse: collapse; }
+  .vocab-table thead th { text-align: left; padding: 0.6rem 1rem; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.7); background: var(--navy); }
+  .vocab-table thead th:first-child { border-radius: 10px 0 0 0; }
+  .vocab-table thead th:last-child { border-radius: 0 10px 0 0; }
+  .vocab-table tbody tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .vocab-table tbody tr:last-child { border-bottom: none; }
+  .vocab-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+  .vocab-table tbody td { padding: 0.65rem 1rem; font-size: 0.93rem; }
+  .vocab-table tbody td:first-child { font-weight: 700; color: var(--navy); }
+  .vocab-table tbody td:nth-child(2) { color: #555; }
+  .vocab-table tbody td:nth-child(3) { color: #888; font-style: italic; font-size: 0.85rem; }
+  .vocab-table-wrap { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.07); background: var(--white); }
+  .grammar-list { display: flex; flex-direction: column; gap: 1rem; }
+  .grammar-card { background: var(--white); border-radius: 12px; padding: 1.2rem 1.4rem; border-left: 4px solid #0A8F7B; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .grammar-card-title { font-weight: 700; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.4rem; }
+  .grammar-card-body { font-size: 0.9rem; color: #555; line-height: 1.7; }
+  .unit-resources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .unit-resource-card { background: var(--white); border: 2px solid rgba(0,0,0,0.07); border-radius: 14px; padding: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .unit-resource-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.09); border-color: #0A8F7B; }
+  .unit-resource-icon { font-size: 1.6rem; }
+  .unit-resource-name { font-weight: 700; font-size: 0.95rem; color: var(--navy); }
+  .unit-resource-desc { font-size: 0.82rem; color: #666; line-height: 1.5; }
+  .unit-nav-row { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0 0; border-top: 2px solid rgba(0,0,0,0.07); flex-wrap: wrap; gap: 0.75rem; }
+  .unit-nav-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.2rem; border-radius: 999px; border: 2px solid var(--navy); background: transparent; font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--navy); text-decoration: none; transition: all 0.2s; }
+  .unit-nav-btn:hover { background: var(--navy); color: var(--white); }
+  .unit-nav-btn.disabled { opacity: 0.3; pointer-events: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="nav-brand">Clase de Español</a>
+  <div class="nav-links">
+    <a href="../../index.html#about">Profe</a>
+    <a href="../../index.html#syllabus">Syllabus</a>
+    <a href="../../index.html#vocab">Vocab</a>
+    <a href="../../index.html#resources">Resources</a>
+  </div>
+</nav>
+
+<div class="unit-hero">
+  <div class="unit-hero-inner">
+    <a href="../../index.html#syllabus" class="back-link">← Back to Syllabus</a>
+    <div><span class="unit-course-tag">Spanish 3</span></div>
+    <div class="unit-hero-num">Unit 03</div>
+    <h1 class="unit-hero-title">Identidad y cultura</h1>
+    <p class="unit-hero-sub">Identity & Cultural Perspectives</p>
+    <span class="unit-weeks-badge">📅 Weeks 7–9</span>
+  </div>
+</div>
+
+<div class="unit-body">
+
+  <div class="unit-section">
+    <h2 class="unit-section-title">Learning Objectives</h2>
+    <ul class="objectives-list">
+      <li>Discuss personal and cultural identity in Spanish</li>
+      <li>Compare cultural practices across Spanish-speaking regions</li>
+      <li>Use vocabulary related to heritage, ethnicity, and diversity</li>
+      <li>Analyze a short authentic text about cultural identity</li>
+      <li>Write a personal essay about your own cultural background</li>
+    </ul>
+  </div>
+
+  <div class="unit-section">
+    <h2 class="unit-section-title">Vocabulary</h2>
+    <div class="vocab-table-wrap">
+      <table class="vocab-table">
+        <thead>
+          <tr><th>Español</th><th>English</th><th>Pronunciation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>la identidad</td><td>identity</td><td>lah ee-dehn-tee-DAHD</td></tr>
+          <tr><td>la herencia</td><td>heritage</td><td>lah eh-REHN-syah</td></tr>
+          <tr><td>las raíces</td><td>roots</td><td>lahs rah-EE-sehs</td></tr>
+          <tr><td>la diversidad</td><td>diversity</td><td>lah dee-behr-see-DAHD</td></tr>
+          <tr><td>pertenecer</td><td>to belong</td><td>pehr-teh-neh-SEHR</td></tr>
+          <tr><td>la ciudadanía</td><td>citizenship</td><td>lah syoo-dah-dah-NEE-ah</td></tr>
+          <tr><td>bilingüe</td><td>bilingual</td><td>bee-LEEN-gweh</td></tr>
+          <tr><td>el idioma materno</td><td>native language</td><td>ehl ee-DYOH-mah mah-TEHR-noh</td></tr>
+          <tr><td>la emigración</td><td>emigration</td><td>lah eh-mee-grah-SYOHN</td></tr>
+          <tr><td>la inmigración</td><td>immigration</td><td>lah een-mee-grah-SYOHN</td></tr>
+          <tr><td>el orgullo</td><td>pride</td><td>ehl or-GOO-yoh</td></tr>
+          <tr><td>la tradición</td><td>tradition</td><td>lah trah-dee-SYOHN</td></tr>
+          <tr><td>la costumbre</td><td>custom / habit</td><td>lah kohs-TOOM-breh</td></tr>
+          <tr><td>el folclore</td><td>folklore</td><td>ehl fohl-KLOH-reh</td></tr>
+          <tr><td>mestizo/a</td><td>of mixed heritage</td><td>mehs-TEE-soh</td></tr>
+          <tr><td>indígena</td><td>indigenous</td><td>een-DEE-heh-nah</td></tr>
+          <tr><td>la igualdad</td><td>equality</td><td>lah ee-gwahl-DAHD</td></tr>
+          <tr><td>los derechos</td><td>rights</td><td>lohs deh-REH-chohs</td></tr>
+          <tr><td>superar</td><td>to overcome</td><td>soo-peh-RAR</td></tr>
+          <tr><td>valorar</td><td>to value</td><td>bah-loh-RAR</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="unit-section">
+    <h2 class="unit-section-title">Grammar Explanations</h2>
+    <div class="grammar-list">
+      <div class="grammar-card">
+        <div class="grammar-card-title">Essay Discourse Markers</div>
+        <div class="grammar-card-body">Use these to structure written arguments: <em>En primer lugar</em> (first), <em>Además</em> (furthermore), <em>Por otro lado</em> (on the other hand), <em>Sin embargo</em> (however), <em>En conclusión</em> (in conclusion).</div>
+      </div>
+      <div class="grammar-card">
+        <div class="grammar-card-title">Passive Voice with Se</div>
+        <div class="grammar-card-body">Use <em>se + third person verb</em> to express passive or impersonal meaning: <em>Se habla español en 20 países.</em> (Spanish is spoken in 20 countries.) <em>Se valoran las tradiciones.</em> (Traditions are valued.)</div>
+      </div>
+      <div class="grammar-card">
+        <div class="grammar-card-title">Comparisons of Equality/Inequality</div>
+        <div class="grammar-card-body"><em>tan + adj. + como</em> (as ... as): <em>Es tan importante como...</em>. <em>más/menos + adj. + que</em> (more/less ... than): <em>La diversidad es más valiosa que la uniformidad.</em></div>
+      </div>
+      <div class="grammar-card">
+        <div class="grammar-card-title">Nominalization</div>
+        <div class="grammar-card-body">Turn adjectives into nouns using <em>lo + adjective</em>: <em>lo importante</em> (what is important / the important thing), <em>lo difícil</em> (the difficult part). Useful in academic writing.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit-section">
+    <h2 class="unit-section-title">Additional Resources</h2>
+    <div class="unit-resources-grid">
+      <div class="unit-resource-card">
+        <div class="unit-resource-icon">📚</div>
+        <div class="unit-resource-name">Authentic Texts</div>
+        <div class="unit-resource-desc">Ask Sr. [Name] for the curated reading list for this unit</div>
+      </div>
+      <div class="unit-resource-card">
+        <div class="unit-resource-icon">🎬</div>
+        <div class="unit-resource-name">Documentary Clips</div>
+        <div class="unit-resource-desc">Search 'identidad cultural latinoamericana documental' on YouTube</div>
+      </div>
+      <div class="unit-resource-card">
+        <div class="unit-resource-icon">🃏</div>
+        <div class="unit-resource-name">Quizlet – Unit 3</div>
+        <div class="unit-resource-desc">Flashcard set for identity and culture vocabulary</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit-nav-row">
+    <a href="sp3-unit2.html" class="unit-nav-btn ">← Previous Unit</a>
+    <a href="sp3-unit4.html" class="unit-nav-btn ">Next Unit →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025–2026 · <strong>Sr. [Name]</strong> · Spanish 1, 2 &amp; 3 · [School Name]</p>
+</footer>
+
+</body>
+</html>
